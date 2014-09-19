@@ -45,12 +45,13 @@ function bibsdb_front_page_views_default_views() {
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
   $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['label'] = 'front page node queue';
   $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
   $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
+    'ding_tabroll_frontpage' => 'ding_tabroll_frontpage',
     'bibsdb_front_page_content' => 'bibsdb_front_page_content',
     'ding_library_listing' => 0,
     'ding_groups_listning' => 0,
-    'ding_tabroll_frontpage' => 0,
   );
   /* Field: Category (groups rows) */
   $handler->display->display_options['fields']['field_ding_group_category']['id'] = 'field_ding_group_category';
@@ -141,6 +142,7 @@ function bibsdb_front_page_views_default_views() {
   /* Display: Bibsdb Front page content listing */
   $handler = $view->new_display('panel_pane', 'Bibsdb Front page content listing', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'I fokus lige nu';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -152,18 +154,16 @@ function bibsdb_front_page_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Group List Image */
-  $handler->display->display_options['fields']['field_ding_group_list_image']['id'] = 'field_ding_group_list_image';
-  $handler->display->display_options['fields']['field_ding_group_list_image']['table'] = 'field_data_field_ding_group_list_image';
-  $handler->display->display_options['fields']['field_ding_group_list_image']['field'] = 'field_ding_group_list_image';
-  $handler->display->display_options['fields']['field_ding_group_list_image']['ui_name'] = 'Group List Image';
-  $handler->display->display_options['fields']['field_ding_group_list_image']['label'] = '';
-  $handler->display->display_options['fields']['field_ding_group_list_image']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_ding_group_list_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_ding_group_list_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_ding_group_list_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_ding_group_list_image']['type'] = 'cs_adaptive_image';
-  $handler->display->display_options['fields']['field_ding_group_list_image']['settings'] = array(
+  /* Field: Group Title Image */
+  $handler->display->display_options['fields']['field_ding_group_title_image']['id'] = 'field_ding_group_title_image';
+  $handler->display->display_options['fields']['field_ding_group_title_image']['table'] = 'field_data_field_ding_group_title_image';
+  $handler->display->display_options['fields']['field_ding_group_title_image']['field'] = 'field_ding_group_title_image';
+  $handler->display->display_options['fields']['field_ding_group_title_image']['ui_name'] = 'Group Title Image';
+  $handler->display->display_options['fields']['field_ding_group_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_ding_group_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ding_group_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_ding_group_title_image']['type'] = 'cs_adaptive_image';
+  $handler->display->display_options['fields']['field_ding_group_title_image']['settings'] = array(
     'image_link' => 'content',
     'styles' => array(
       'breakpoint_1' => '768',
@@ -171,7 +171,7 @@ function bibsdb_front_page_views_default_views() {
       'breakpoint_2' => '500',
       'style_2' => 'ding_panorama_primary_small',
       'max_style' => 'ding_panorama_primary_small',
-      'fallback_style' => 'ding_panorama_primary_small',
+      'fallback_style' => '',
     ),
   );
   /* Field: Group Content Lead */
@@ -183,18 +183,16 @@ function bibsdb_front_page_views_default_views() {
   $handler->display->display_options['fields']['field_ding_group_lead']['element_type'] = 'p';
   $handler->display->display_options['fields']['field_ding_group_lead']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ding_group_lead']['element_default_classes'] = FALSE;
-  /* Field: Page List Image */
-  $handler->display->display_options['fields']['field_ding_page_list_image']['id'] = 'field_ding_page_list_image';
-  $handler->display->display_options['fields']['field_ding_page_list_image']['table'] = 'field_data_field_ding_page_list_image';
-  $handler->display->display_options['fields']['field_ding_page_list_image']['field'] = 'field_ding_page_list_image';
-  $handler->display->display_options['fields']['field_ding_page_list_image']['ui_name'] = 'Page List Image';
-  $handler->display->display_options['fields']['field_ding_page_list_image']['label'] = '';
-  $handler->display->display_options['fields']['field_ding_page_list_image']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_ding_page_list_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_ding_page_list_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_ding_page_list_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_ding_page_list_image']['type'] = 'cs_adaptive_image';
-  $handler->display->display_options['fields']['field_ding_page_list_image']['settings'] = array(
+  /* Field: Page Title Image */
+  $handler->display->display_options['fields']['field_ding_page_title_image']['id'] = 'field_ding_page_title_image';
+  $handler->display->display_options['fields']['field_ding_page_title_image']['table'] = 'field_data_field_ding_page_title_image';
+  $handler->display->display_options['fields']['field_ding_page_title_image']['field'] = 'field_ding_page_title_image';
+  $handler->display->display_options['fields']['field_ding_page_title_image']['ui_name'] = 'Page Title Image';
+  $handler->display->display_options['fields']['field_ding_page_title_image']['label'] = '';
+  $handler->display->display_options['fields']['field_ding_page_title_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ding_page_title_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_ding_page_title_image']['type'] = 'cs_adaptive_image';
+  $handler->display->display_options['fields']['field_ding_page_title_image']['settings'] = array(
     'image_link' => 'content',
     'styles' => array(
       'breakpoint_1' => '768',
@@ -202,7 +200,7 @@ function bibsdb_front_page_views_default_views() {
       'breakpoint_2' => '500',
       'style_2' => 'ding_panorama_primary_small',
       'max_style' => 'ding_panorama_primary_small',
-      'fallback_style' => 'ding_panorama_primary_small',
+      'fallback_style' => '',
     ),
   );
   /* Field: Page Content Lead */
@@ -219,12 +217,11 @@ function bibsdb_front_page_views_default_views() {
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['ui_name'] = 'Link to content';
-  $handler->display->display_options['fields']['title_1']['label'] = '';
+  $handler->display->display_options['fields']['title_1']['label'] = 'Gå til';
   $handler->display->display_options['fields']['title_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title_1']['alter']['text'] = 'Gå til [title]';
+  $handler->display->display_options['fields']['title_1']['alter']['text'] = '[title]';
   $handler->display->display_options['fields']['title_1']['element_type'] = 'span';
   $handler->display->display_options['fields']['title_1']['element_class'] = 'group-link';
-  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Nodequeue: Position */
@@ -257,6 +254,15 @@ function bibsdb_front_page_views_default_views() {
   $handler->display->display_options['filters']['promote']['value'] = '1';
   $handler->display->display_options['pane_category']['name'] = 'Bibsdb';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['bibsdb_frontpage_content'] = array(
     t('Master'),
     t('Themes'),
@@ -273,10 +279,12 @@ function bibsdb_front_page_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('queue'),
+    t('front page node queue'),
     t('<i class="icon-chevron-right"></i>'),
     t('Bibsdb Front page content listing'),
-    t('Gå til [title]'),
+    t('I fokus lige nu'),
+    t('Gå til'),
+    t('[title]'),
     t('Bibsdb'),
   );
   $export['bibsdb_frontpage_content'] = $view;
