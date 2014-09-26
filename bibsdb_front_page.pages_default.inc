@@ -118,6 +118,37 @@ function bibsdb_front_page_default_page_manager_pages() {
     $display->content['new-7518ffa0-fc72-426b-a9ad-82d00daf97e2'] = $pane;
     $display->panels['attachment_1_1'][1] = 'new-7518ffa0-fc72-426b-a9ad-82d00daf97e2';
     $pane = new stdClass();
+    $pane->pid = 'new-b15233ee-77ce-4871-ad38-438db8d0f888';
+    $pane->panel = 'primary';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Frontpage Links',
+      'title' => '',
+      'body' => '<div class="bibsdb-frontpage-links">
+	<p><a href="http://dr.dk">Sådan søger du</a></p>
+	<p><a href="/frontpage">Sådan reserverer du</a></p>
+	<p><a href="/frontapage">Sådan fornyer du</a></p>
+	<p><a href="/frontpage">Sådan betaler du dine gebyrer og regninger</a></p>
+</div>
+',
+      'format' => 'html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b15233ee-77ce-4871-ad38-438db8d0f888';
+    $display->content['new-b15233ee-77ce-4871-ad38-438db8d0f888'] = $pane;
+    $display->panels['primary'][0] = 'new-b15233ee-77ce-4871-ad38-438db8d0f888';
+    $pane = new stdClass();
     $pane->pid = 'new-67271bbe-e901-4ff4-8773-dd958d9c39b6';
     $pane->panel = 'primary';
     $pane->type = 'views_panes';
@@ -141,11 +172,11 @@ function bibsdb_front_page_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '67271bbe-e901-4ff4-8773-dd958d9c39b6';
     $display->content['new-67271bbe-e901-4ff4-8773-dd958d9c39b6'] = $pane;
-    $display->panels['primary'][0] = 'new-67271bbe-e901-4ff4-8773-dd958d9c39b6';
+    $display->panels['primary'][1] = 'new-67271bbe-e901-4ff4-8773-dd958d9c39b6';
     $pane = new stdClass();
     $pane->pid = 'new-59a040b9-d019-4d7d-8cea-b5d0306608c0';
     $pane->panel = 'primary';
@@ -173,11 +204,11 @@ function bibsdb_front_page_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '59a040b9-d019-4d7d-8cea-b5d0306608c0';
     $display->content['new-59a040b9-d019-4d7d-8cea-b5d0306608c0'] = $pane;
-    $display->panels['primary'][1] = 'new-59a040b9-d019-4d7d-8cea-b5d0306608c0';
+    $display->panels['primary'][2] = 'new-59a040b9-d019-4d7d-8cea-b5d0306608c0';
     $pane = new stdClass();
     $pane->pid = 'new-90af2f86-01c4-4674-80ce-8293fc4e7469';
     $pane->panel = 'secondary';
